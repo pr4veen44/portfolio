@@ -39,7 +39,7 @@ export default function Home() {
         {/* Icons */}
         <div className="flex justify-center gap-6 mt-8 text-xl sm:text-2xl text-zinc-500">
           <a
-            href="https://github.com/praveen4107"
+            href="https://github.com/pr4veen44"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-transform transform hover:scale-110"
