@@ -79,7 +79,7 @@ export default function Home() {
         </p>
 
         <nav className="mt-9 sm:mt-10" aria-label="Social links">
-          <ul className="inline-flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-6">
+          <ul className="inline-flex items-center justify-center gap-x-3 sm:gap-x-3.5">
             {socialLinks.map(({ href, icon, label }) => (
               <li key={label}>
                 <a
