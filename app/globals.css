@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080b10;
+  --foreground: #e8eaef;
+  --muted: #8b93a7;
+  --subtle: #5c6478;
+  --accent: #b794f6;
+  --accent-muted: #8b5cf6;
+  --surface: #11151c;
+  --border: rgba(255, 255, 255, 0.08);
+  --glow: rgba(139, 92, 246, 0.16);
+  --glow-secondary: rgba(183, 148, 246, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes glow-drift-primary {
+  0%,
+  100% {
+    transform: translate3d(-50%, -33%, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(-46%, -38%, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes glow-drift-secondary {
+  0%,
+  100% {
+    transform: translate3d(33%, 33%, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(28%, 28%, 0) scale(1.12);
+    opacity: 0.95;
+  }
+}
+
+@keyframes glow-drift-tertiary {
+  0%,
+  100% {
+    transform: translate3d(-60%, 40%, 0) scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(-55%, 35%, 0) scale(1.05);
+    opacity: 0.75;
+  }
+}
+
+.ambient-glow-primary {
+  will-change: transform;
+  animation: glow-drift-primary 22s ease-in-out infinite;
+}
+
+.ambient-glow-secondary {
+  will-change: transform;
+  animation: glow-drift-secondary 28s ease-in-out infinite;
+}
+
+.ambient-glow-tertiary {
+  will-change: transform;
+  animation: glow-drift-tertiary 32s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow-primary,
+  .ambient-glow-secondary,
+  .ambient-glow-tertiary {
+    animation: none;
+  }
 }

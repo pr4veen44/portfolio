@@ -8,77 +8,97 @@ import {
   faInstagram,
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { Space_Grotesk } from "next/font/google";
+import { AmbientBackground } from "@/components/ambient-background";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
 });
+
+const socialLinks: {
+  href: string;
+  icon: IconDefinition;
+  label: string;
+}[] = [
+  {
+    href: "https://github.com/pr4veen44",
+    icon: faGithub,
+    label: "GitHub",
+  },
+  {
+    href: "https://x.com/praveen__4",
+    icon: faXTwitter,
+    label: "X (Twitter)",
+  },
+  {
+    href: "https://www.linkedin.com/in/praveen0004/",
+    icon: faLinkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.instagram.com/p_r_a_v_e_e_n__4",
+    icon: faInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://discordapp.com/users/1268072758559113267",
+    icon: faDiscord,
+    label: "Discord",
+  },
+];
 
 export default function Home() {
   return (
     <main
-      className={`${spaceGrotesk.className} flex min-h-screen flex-col items-center justify-center bg-[#0a0a0a] text-zinc-200 px-6`}
+      className={`${spaceGrotesk.className} relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-8`}
     >
-      <section className="max-w-2xl text-center space-y-5">
-        {/* Name */}
-        <h1 className="text-4xl sm:text-5xl font-semibold text-white tracking-wide">
+      <AmbientBackground />
+
+      <section className="relative z-10 w-full max-w-2xl text-center">
+        <h1 className="text-[clamp(2.25rem,8vw,3.75rem)] leading-[1.1] font-semibold tracking-tight text-foreground">
           Praveen
         </h1>
 
-        {/* Role */}
-        <p className="text-base sm:text-lg text-zinc-400 font-medium">
-          Backend Developer • Python, Django, REST APIs
+        <p className="mt-4 text-[clamp(1rem,3.5vw,1.25rem)] leading-snug font-medium text-muted sm:mt-5">
+          Python Backend Developer
+        </p>
+        <p className="mt-1.5 text-sm leading-relaxed text-subtle sm:mt-2 sm:text-base">
+          Django · FastAPI · PostgreSQL · REST APIs
         </p>
 
-        {/* Description */}
-        <p className="text-sm sm:text-base text-zinc-500 leading-relaxed max-w-lg mx-auto">
-          Computer Science Student at Vellore Institute of Technology
+        <div
+          className="mx-auto mt-8 h-px w-12 bg-gradient-to-r from-transparent via-accent/50 to-transparent sm:mt-10 sm:w-16"
+          aria-hidden
+        />
+
+        <p className="mx-auto mt-8 max-w-md text-sm leading-relaxed text-subtle sm:mt-10 sm:text-base">
+          Computer Science student at{" "}
+          <span className="text-muted">Vellore Institute of Technology</span>
         </p>
 
-        {/* Icons */}
-        <div className="flex justify-center gap-6 mt-8 text-xl sm:text-2xl text-zinc-500">
-          <a
-            href="https://github.com/pr4veen44"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-transform transform hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-          <a
-            href="https://x.com/praveen__4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-transform transform hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faXTwitter} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/praveen0004/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-transform transform hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a
-            href="https://www.instagram.com/p_r_a_v_e_e_n__4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-transform transform hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a
-            href="https://discordapp.com/users/1268072758559113267"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-transform transform hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faDiscord} />
-          </a>
-        </div>
+        <nav className="mt-9 sm:mt-10" aria-label="Social links">
+          <ul className="inline-flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-6">
+            {socialLinks.map(({ href, icon, label }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="group inline-flex h-11 w-11 items-center justify-center text-xl text-subtle transition-colors duration-300 ease-out hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent sm:h-11 sm:w-11 sm:text-[1.375rem]"
+                >
+                  <FontAwesomeIcon
+                    icon={icon}
+                    fixedWidth
+                    className="block transition-transform duration-300 ease-out group-hover:scale-105"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </section>
     </main>
   );

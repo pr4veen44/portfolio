@@ -6,15 +6,6 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
-import { Space_Grotesk } from "next/font/google";
-
-// Configure font
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Praveen | Python Backend Developer",
-  description: "Portfolio of Praveen — Python backend developer (Django REST API)",
+  title: "Praveen | Portfolio",
+  description: "Portfolio of Praveen — Student at VIT",
 };
 
 export default function RootLayout({
