@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #080b10;
+  --background: #000000;
   --foreground: #e8eaef;
   --muted: #8b93a7;
   --subtle: #5c6478;
@@ -9,8 +9,6 @@
   --accent-muted: #8b5cf6;
   --surface: #11151c;
   --border: rgba(255, 255, 255, 0.08);
-  --glow: rgba(139, 92, 246, 0.16);
-  --glow-secondary: rgba(183, 148, 246, 0.1);
 }
 
 @theme inline {
@@ -27,65 +25,53 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
 }
 
-@keyframes glow-drift-primary {
-  0%,
-  100% {
-    transform: translate3d(-50%, -33%, 0) scale(1);
-    opacity: 0.9;
+@keyframes purple-orbit {
+  from {
+    transform: rotate(0deg) scale(1.02);
   }
-  50% {
-    transform: translate3d(-46%, -38%, 0) scale(1.08);
-    opacity: 1;
+  to {
+    transform: rotate(360deg) scale(1.02);
   }
 }
 
-@keyframes glow-drift-secondary {
-  0%,
-  100% {
-    transform: translate3d(33%, 33%, 0) scale(1);
-    opacity: 0.7;
+@keyframes purple-orbit-reverse {
+  from {
+    transform: rotate(360deg) scale(1);
   }
-  50% {
-    transform: translate3d(28%, 28%, 0) scale(1.12);
-    opacity: 0.95;
+  to {
+    transform: rotate(0deg) scale(1);
   }
 }
 
-@keyframes glow-drift-tertiary {
-  0%,
-  100% {
-    transform: translate3d(-60%, 40%, 0) scale(0.95);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translate3d(-55%, 35%, 0) scale(1.05);
-    opacity: 0.75;
-  }
-}
-
-.ambient-glow-primary {
+.purple-flow-one {
+  opacity: 0.32;
+  filter: blur(34px);
+  transform-origin: 50% 50%;
   will-change: transform;
-  animation: glow-drift-primary 22s ease-in-out infinite;
+  background-image:
+    radial-gradient(44% 38% at 20% 26%, rgba(139, 92, 246, 0.34) 0%, transparent 72%),
+    radial-gradient(42% 36% at 78% 76%, rgba(183, 148, 246, 0.24) 0%, transparent 74%);
+  animation: purple-orbit 120s linear infinite;
 }
 
-.ambient-glow-secondary {
+.purple-flow-two {
+  opacity: 0.24;
+  filter: blur(40px);
+  transform-origin: 52% 48%;
   will-change: transform;
-  animation: glow-drift-secondary 28s ease-in-out infinite;
-}
-
-.ambient-glow-tertiary {
-  will-change: transform;
-  animation: glow-drift-tertiary 32s ease-in-out infinite;
+  background-image:
+    radial-gradient(40% 34% at 74% 24%, rgba(139, 92, 246, 0.28) 0%, transparent 74%),
+    radial-gradient(38% 34% at 24% 74%, rgba(167, 139, 250, 0.22) 0%, transparent 74%);
+  animation: purple-orbit-reverse 170s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ambient-glow-primary,
-  .ambient-glow-secondary,
-  .ambient-glow-tertiary {
+  .purple-flow-one,
+  .purple-flow-two {
     animation: none;
   }
 }
