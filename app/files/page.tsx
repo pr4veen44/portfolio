@@ -41,10 +41,10 @@ export default async function FilesPage({ searchParams }: FilesPageProps) {
                 href={file.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between gap-4 rounded-xl border border-border bg-surface/60 px-4 py-3.5 text-sm text-foreground transition-colors duration-200 hover:border-accent/30 hover:bg-surface sm:px-5 sm:py-4 sm:text-base"
+                className="group flex items-center justify-between gap-4 rounded-xl border border-border bg-surface/70 px-4 py-3.5 text-sm text-foreground transition-colors duration-200 hover:border-white/20 hover:bg-white/5 sm:px-5 sm:py-4 sm:text-base"
               >
                 <span className="font-medium">{file.name}</span>
-                <span className="shrink-0 text-accent text-xs font-medium uppercase tracking-wide">
+                <span className="shrink-0 text-white/75 text-xs font-medium uppercase tracking-wide transition-colors duration-200 group-hover:text-white">
                   Open
                 </span>
               </a>
@@ -57,7 +57,7 @@ export default async function FilesPage({ searchParams }: FilesPageProps) {
             href={DRIVE_FOLDER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted underline-offset-2 transition-colors hover:text-accent hover:underline"
+            className="text-muted underline-offset-2 transition-colors hover:text-white hover:underline"
           >
             Open folder in Google Drive
           </a>
@@ -66,7 +66,7 @@ export default async function FilesPage({ searchParams }: FilesPageProps) {
         <p className="mt-8 text-center">
           <Link
             href="/"
-            className="text-xs text-subtle underline-offset-2 transition-colors hover:text-muted hover:underline"
+            className="text-xs text-subtle underline-offset-2 transition-colors hover:text-white hover:underline"
           >
             ← Back
           </Link>

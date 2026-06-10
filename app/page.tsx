@@ -68,11 +68,6 @@ export default function Home() {
           Django · FastAPI · PostgreSQL · REST APIs
         </p>
 
-        <div
-          className="mx-auto mt-8 h-px w-12 bg-gradient-to-r from-transparent via-accent/50 to-transparent sm:mt-10 sm:w-16"
-          aria-hidden
-        />
-
         <p className="mx-auto mt-8 max-w-md text-sm leading-relaxed text-subtle sm:mt-10 sm:text-base">
           Computer Science student at{" "}
           <span className="text-muted">Vellore Institute of Technology</span>
@@ -87,7 +82,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="group inline-flex h-11 w-11 items-center justify-center text-xl text-subtle transition-colors duration-300 ease-out hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent sm:h-11 sm:w-11 sm:text-[1.375rem]"
+                  className="group inline-flex h-11 w-11 items-center justify-center rounded-full text-xl text-white/65 transition-colors duration-300 ease-out hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white/70 sm:h-11 sm:w-11 sm:text-[1.375rem]"
                 >
                   <FontAwesomeIcon
                     icon={icon}

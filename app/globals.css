@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #e8eaef;
-  --muted: #8b93a7;
-  --subtle: #5c6478;
-  --accent: #b794f6;
-  --accent-muted: #8b5cf6;
-  --surface: #11151c;
-  --border: rgba(255, 255, 255, 0.08);
+  --background: #090909;
+  --foreground: #f5f5f5;
+  --muted: #d4d4d4;
+  --subtle: #a3a3a3;
+  --accent: #f5f5f5;
+  --accent-muted: #d4d4d4;
+  --surface: #111111;
+  --border: rgba(255, 255, 255, 0.12);
 }
 
 @theme inline {
@@ -27,51 +27,4 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-}
-
-@keyframes purple-orbit {
-  from {
-    transform: rotate(0deg) scale(1.02);
-  }
-  to {
-    transform: rotate(360deg) scale(1.02);
-  }
-}
-
-@keyframes purple-orbit-reverse {
-  from {
-    transform: rotate(360deg) scale(1);
-  }
-  to {
-    transform: rotate(0deg) scale(1);
-  }
-}
-
-.purple-flow-one {
-  opacity: 0.32;
-  filter: blur(34px);
-  transform-origin: 50% 50%;
-  will-change: transform;
-  background-image:
-    radial-gradient(44% 38% at 20% 26%, rgba(139, 92, 246, 0.34) 0%, transparent 72%),
-    radial-gradient(42% 36% at 78% 76%, rgba(183, 148, 246, 0.24) 0%, transparent 74%);
-  animation: purple-orbit 120s linear infinite;
-}
-
-.purple-flow-two {
-  opacity: 0.24;
-  filter: blur(40px);
-  transform-origin: 52% 48%;
-  will-change: transform;
-  background-image:
-    radial-gradient(40% 34% at 74% 24%, rgba(139, 92, 246, 0.28) 0%, transparent 74%),
-    radial-gradient(38% 34% at 24% 74%, rgba(167, 139, 250, 0.22) 0%, transparent 74%);
-  animation: purple-orbit-reverse 170s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .purple-flow-one,
-  .purple-flow-two {
-    animation: none;
-  }
 }
