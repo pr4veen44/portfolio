@@ -65,7 +65,7 @@ export default function Home() {
           Python Backend Developer
         </p>
         <p className="mt-1.5 text-sm leading-relaxed text-subtle sm:mt-2 sm:text-base">
-          Django · FastAPI · PostgreSQL · REST APIs
+          Django REST Framework · FastAPI · REST APIs
         </p>
 
         <p className="mx-auto mt-8 max-w-md text-sm leading-relaxed text-subtle sm:mt-10 sm:text-base">
